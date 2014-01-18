@@ -14,15 +14,14 @@ import java.util.concurrent.TimeUnit;
 public class SharedDriver
 
 {
-    private final String url = "http://lsdatwtcqa01:8080/cleartrip/attHome.html";
     WebDriver webDriver;
 
     @Before
     public void beforeScenario(){
-       webDriver = new FirefoxDriver();
+        webDriver = new FirefoxDriver();
         webDriver.manage().timeouts().pageLoadTimeout(30 , TimeUnit.SECONDS);
+        webDriver.manage().timeouts().implicitlyWait(1 , TimeUnit.SECONDS);
         webDriver.manage().window().maximize();
-       webDriver.navigate().to(url);
     }
 
     @After
@@ -35,7 +34,7 @@ public class SharedDriver
             }
         }
         catch(WebDriverException exception){
-             System.out.println("Exception while capturing screenshot for scenario " +  scenario);
+            System.out.println("Exception while capturing screenshot for scenario " +  scenario);
         }
 
         webDriver.quit();

@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 public class WaitFor {
 
     private WebDriver webdriver;
-    int timeOut = Integer.parseInt(Configuration.getConfig().getProperty("timeout"));
+    int timeOut = Integer.parseInt(Configuration.getProperty("timeout"));
 
     public WaitFor(WebDriver webdriver)
     {

@@ -7,15 +7,19 @@ import java.util.Properties;
 
 public class Configuration {
 
-    public static Properties getConfig(){
+    private static Properties getConfig(){
         Properties properties = new Properties();
         try{
             properties.load(new FileInputStream("config.properties"));
             return properties;
         }
          catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
         return properties;
+    }
+
+    public static String getProperty(String property){
+        return getConfig().getProperty(property);
     }
 }

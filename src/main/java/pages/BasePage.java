@@ -12,7 +12,7 @@ public class BasePage {
 
     private WebDriver webDriver;
     private WaitFor waitFor;
-    private final By navigation = By.cssSelector(Configuration.getConfig().getProperty("navigation"));
+    private final By navigation = By.cssSelector(Configuration.getProperty("navigation"));
 
     public BasePage(WebDriver webDriver){
         this.webDriver = webDriver;
